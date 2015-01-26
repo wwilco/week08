@@ -1,0 +1,23 @@
+<html>
+  <body>
+    <p>
+
+    </p>
+    <script>
+    var url = "http://localhost:4567"
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url);
+    xhr.addEventListener('load', function(e) {
+      console.log(xhr.responseText)
+      var d = xhr.responseText
+      var parsed = JSON.parse(d);
+      // console.log(parsed);
+      var body = document.querySelector("body");
+      var p = document.querySelector("p");
+      p.innerHTML = parsed.msg;
+      body.appendChild(p);
+    });
+    xhr.send();
+    </script>
+  </body>
+</html>

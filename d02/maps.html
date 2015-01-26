@@ -1,0 +1,28 @@
+<html>
+<head>
+  <style type="text/css">
+    #map-canvas { height: 610px; width: 800px;}
+  </style>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=
+    AIzaSyDBurh2lDleJzdr7Z2YxK_YQqXF3pnWgbM"
+  ></script>
+</head>
+<body>
+
+  <div id="map-canvas"></div>
+  <script>
+  var lati = prompt("please enter a latitude");
+  lati = parseInt(lati);
+  var long = prompt("please enter a longitude");
+  long = parseInt(long);
+
+
+  var mapOptions = {
+    center: { lat: lati, lng: long},
+    zoom: 11
+  };
+  var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  </script>
+</body>
+</html>

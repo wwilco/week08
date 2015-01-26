@@ -1,0 +1,23 @@
+<html>
+<head>
+  <style>
+  li {
+    list-style: none;
+  }
+  img {
+    width: 50%;
+    float: left;
+  }
+  </style>
+</head>
+<body>
+
+  <ul>
+    <% array.each do |each| %>
+    <% url = each["images"]["standard_resolution"]["url"] %>
+    <li><img src='<%= url %>'></li>
+    <% end %>
+  </ul>
+
+</body>
+</html>

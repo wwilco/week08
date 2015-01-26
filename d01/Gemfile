@@ -1,0 +1,3 @@
+source 'https://rubygems.org' #the api youre htting when you do gem install
+gem 'pry'
+gem 'sinatra'

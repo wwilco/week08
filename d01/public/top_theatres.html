@@ -1,0 +1,28 @@
+<html>
+<body>
+  <p>
+
+  </p>
+  <script>
+  var url = "http://localhost:4567/top_theatres"
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("GET", url);
+  xhr.addEventListener('load', function(e) {
+
+    var movie = xhr.responseText
+    console.log(xhr.responseText)
+
+    var parsed = JSON.parse(movie);
+    console.log(parsed);
+
+    var body = document.querySelector("body");
+    var p = document.querySelector("p");
+    body.appendChild(p);
+    p.innerHTML = parsed[1];
+
+  });
+  xhr.send();
+  </script>
+</body>
+</html>

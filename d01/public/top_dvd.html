@@ -1,0 +1,38 @@
+<html>
+<body>
+  <p>
+
+  </p>
+  <script>
+  var url = "http://localhost:4567/top_dvd"
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", url);
+  xhr.addEventListener('load', function(e) {
+
+    var dvd = xhr.responseText
+    console.log(dvd)
+
+    var parsed = JSON.parse(dvd);
+    console.log(parsed);
+
+    var object = parsed.results
+
+    object.forEach(function(data){
+      var body = document.querySelector("body");
+      var h1 = document.createElement("h1");
+      body.appendChild(h1);
+      h1.innerHTML = Object.keys(data);
+      var values = Object.keys(data);
+
+      values.forEach(function(value){
+        var nums = data[value];
+        console.log(nums);
+        // h1.appendChild(nums);
+      })
+
+    })
+  });
+  xhr.send();
+  </script>
+</body>
+</html>
